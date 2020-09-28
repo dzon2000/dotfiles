@@ -27,7 +27,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -281,7 +281,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 # exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
@@ -322,7 +322,7 @@ set_from_resource $term_color15    color15
 bar {
 	i3bar_command i3bar
 	status_command i3status
-	position bottom
+	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
@@ -334,12 +334,12 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #222D31
+        background #353836
         statusline #F9FAF9
         separator  #454947
 
 #                      border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
+        focused_workspace  #F9FAF9 #505c54 #FDF6E3
         active_workspace   #595B5B #353836 #FDF6E3
         inactive_workspace #595B5B #222D31 #EEE8D5
         binding_mode       #16a085 #2C2C2C #F9FAF9
