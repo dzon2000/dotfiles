@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ $1 = "up" ]
+then
+    pactl set-sink-volume @DEFAULT_SINK@ +5000
+elif [ $1 = "down" ] 
+then
+    pactl set-sink-volume @DEFAULT_SINK@ -5000
+else
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+fi
+volume=$(pacmd list-sinks | grep volume | head -n1 | awk '{print $5}')
+muted=$(pacmd list-sinks | grep muted | head -n1 | awk '{print $2}')
+
+if [ $muted = "yes" ]
+then
+    dunstify -h string:x-dunst-stack-tag:volume Volume "0%"
+else
+    dunstify -h string:x-dunst-stack-tag:volume Volume "$volume"
+fi
