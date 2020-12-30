@@ -2,15 +2,15 @@
 
 if [ $1 = "up" ]
 then
-    pactl set-sink-volume @DEFAULT_SINK@ +5000
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
 elif [ $1 = "down" ] 
 then
-    pactl set-sink-volume @DEFAULT_SINK@ -5000
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
 else
     pactl set-sink-mute @DEFAULT_SINK@ toggle
 fi
-volume=$(pacmd list-sinks | grep volume | head -n1 | awk '{print $5}')
-muted=$(pacmd list-sinks | grep muted | head -n1 | awk '{print $2}')
+volume=$(pacmd list-sinks | grep '\* index' -A 7 | grep volume | head -n1 | awk '{print $5}')
+muted=$(pacmd list-sinks | grep '\* index' -A 11 | grep muted | head -n1 | awk '{print $2}')
 
 if [ $muted = "yes" ]
 then
