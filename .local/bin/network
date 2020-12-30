@@ -1,0 +1,13 @@
+#!/bin/bash
+
+case $BUTTON in
+    1) notify-send "Networks" "$(ip -f inet addr show enp14s0 | awk '/inet / {print $2}')" ;;
+esac
+
+icon="🚫"
+if grep -qw up /sys/class/net/enp14s0/operstate
+then
+    icon="🌐"
+fi
+
+[ -d "/sys/class/net/tun0" ] && echo "$icon+🔒" || echo "$icon"

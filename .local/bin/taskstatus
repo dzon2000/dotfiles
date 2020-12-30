@@ -1,0 +1,8 @@
+#!/bin/bash
+
+case $BUTTON in
+    1) notify-send "Task list" "$(task pr)" ;;
+esac
+
+taskCount=$(task -l)
+echo -e $taskCount
