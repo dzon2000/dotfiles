@@ -1,25 +1,20 @@
 #!/bin/bash
 
-echo "$interface status: $ifcarrier Reason: $reason" >> /home/cierpki/dhcpcd.log
 
 if [ "$interface" = "enp14s0" ]; then
 	if [ "$ifcarrier" = "down" ] && [ "$reason" = EXPIRE ]; then
 		# Refresh dwmblocks
 		pkill -RTMIN+27 dwmblocks
-		echo "Interface is down..." >> /home/cierpki/dhcpcd.log
 	elif [ "$ifcarrier" = "up" ] && [ "$reason" = BOUND ]; then
 		# Refresh dwmblocks
 		pkill -RTMIN+27 dwmblocks
-		echo "Interface is up..." >> /home/cierpki/dhcpcd.log
 	fi
 fi
 
 if [ "$interface" = "tun0" ]; then
 	if [ "$ifcarrier" = "up" ] && [ "$reason" = 3RDPARTY ]; then
 		pkill -RTMIN+27 dwmblocks
-		echo "VPN connected..." >> /home/cierpki/dhcpcd.log
 	elif [ "$ifcarrier" = "down" ] && [ "$reason" = DEPARTED ]; then
 		pkill -RTMIN+27 dwmblocks
-		echo "VPN disconnected..." >> /home/cierpki/dhcpcd.log
 	fi
 fi
