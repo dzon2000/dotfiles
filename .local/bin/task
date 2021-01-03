@@ -2,22 +2,34 @@
 
 cmd=$1
 task_file="$HOME/.task_list"
+
+printList() 
+{
+    i=1
+    while IFS= read -r line
+    do
+        echo "$i. $line"
+        ((i=i+1))
+    done < "$task_file"
+}
+
 case $cmd in
     add)
-        echo "$2" >> .task_list
+        echo "$2" >> $task_file
         echo "Added '$2'"
     ;;
     del)
         echo "Deleting $2"
         sed -i "$2d" $task_file
     ;;
+    -l)
+        echo "$(wc -l < $task_file)"
+    ;;
+    pr)
+        printList
+    ;;
     *)
         echo "Task list:"
-        i=1
-        while IFS= read -r line
-        do
-            echo "$i. $line"
-            ((i=i+1))
-        done < "$task_file"
+        printList
     ;;
 esac
