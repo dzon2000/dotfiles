@@ -1,0 +1,14 @@
+#!/bin/bash
+
+fileName="$HOME/Dokumenty/stuff/notes/$(date +%F).md"
+
+if [ ! -f "$fileName" ]; then
+    echo "# $(date +%F)" > $fileName
+fi
+
+vim -c "norm Go" \
+    -c "norm Go## $(date +%H:%M)" \
+    -c "norm G2o" \
+    -c "norm zz" \
+    -c "startinsert" $fileName
+
