@@ -5,4 +5,4 @@ case $BUTTON in
 esac
 
 date=$(date '+%b %d (%a) %H:%M')
-echo -e $date
+echo -e "$date "

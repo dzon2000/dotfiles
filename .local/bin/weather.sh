@@ -1,6 +1,6 @@
 #!/bin/bash
 
-weather=$(curl -s 'wttr.in/Białystok?format=1')
+weather=$(curl -s 'wttr.in/Bialystok?format=1')
 if [[ "$weather" == "Unknown location"* ]]; then
     echo "No data"
 else

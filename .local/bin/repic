@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Restarting picom"
+killall picom
+picom &
+echo "Picom restarted..."

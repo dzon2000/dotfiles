@@ -1,5 +1,5 @@
 #!/bin/bash
 
-PERC=$(curl -s "http://192.168.1.25/admin/api.php?summaryRaw" | jq .ads_percentage_today)
+PERC=$(curl -s "http://192.168.0.194/admin/api.php?summaryRaw" | jq .ads_percentage_today)
 
-printf "%0.1f\n" $PERC
+printf "%0.1f%%" $PERC

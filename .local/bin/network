@@ -6,19 +6,19 @@ esac
 
 icon=""
 sep=""
-if grep -qw up /sys/class/net/enp14s0/operstate
+if grep -qw up /sys/class/net/eth0/operstate
 then
-    icon="🌐"
-    sep="/"
+    icon=""
+    sep=" / "
 fi
-if grep -qw up /sys/class/net/wlp7s0/operstate
+if grep -qw up /sys/class/net/wlan0/operstate
 then
-    icon="$icon$sep📶"
+    icon="$icon$sep"
 fi
 
 if [ -z "$icon" ]
 then
-    icon="🚫"
+    icon=""
 fi
 
-[ -d "/sys/class/net/tun0" ] && echo "$icon+🔒" || echo "$icon"
+[ -d "/sys/class/net/tun0" ] && echo "$icon + " || echo "$icon"
