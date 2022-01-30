@@ -84,3 +84,7 @@
 # Selection to clipboard
 "snap"
    F3
+
+# Lock screen
+"lock"
+   Mod4 + l 
