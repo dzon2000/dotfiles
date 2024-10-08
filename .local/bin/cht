@@ -1,5 +1,0 @@
-#!/bin/bash
-
-CMD=$1
-
-curl "cheat.sh/$CMD"

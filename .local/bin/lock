@@ -1,3 +1,0 @@
-#!/bin/bash
-
-slock -m "Screen locked at $(date '+%b %d (%a) %H:%M')"

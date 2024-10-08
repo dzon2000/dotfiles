@@ -1,7 +1,0 @@
-dwmblocks &
-picom &
-redshift -l 53.13333:23.16433 &
-export BROWSER=/usr/bin/firefox
-./.fehbg
-setxkbmap pl
-xbinkeys --poll-rc
