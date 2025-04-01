@@ -17,5 +17,5 @@ vim.opt.swapfile = false
 vim.g.backgroud = "light"
 
 -- Neotree
-vim.keymap.set("n", "<leader>nt", ":Neotree filesystem reveal left<CR>")
+vim.keymap.set("n", "<leader>nt", ":Neotree toggle<CR>")
 vim.diagnostic.config({ virtual_text = true })
