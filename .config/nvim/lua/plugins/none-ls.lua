@@ -8,7 +8,7 @@ return {
         null_ls.builtins.formatting.black,
         null_ls.builtins.completion.spell,
         null_ls.builtins.completion.tags,
-        null_ls.builtins.diagnostics.pylint,
+--        null_ls.builtins.diagnostics.pylint,
       },
     })
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})

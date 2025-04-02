@@ -27,7 +27,7 @@ return {
           pylsp = {
             plugins = {
               black = { enabled = true },
-              pylint = { enabled = false },
+              pylint = { enabled = true },
               pyls_isort = { enabled = true },
             },
           },
