@@ -1,0 +1,16 @@
+[window]
+decorations = "buttonless"
+opacity = 0.8
+
+[window.padding]
+x = 10
+y = 10
+
+[terminal.shell]
+program = "/bin/bash"
+args = ["--login"]
+
+[font]
+normal = { family = "Hack Nerd Font", style = "Regular" }
+
+[terminal]
